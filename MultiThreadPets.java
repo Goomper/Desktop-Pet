@@ -1,5 +1,4 @@
 public class MultiThreadPets extends Thread {
-
     private int type;
     private int rarity;
     private int id;

@@ -35,7 +35,6 @@ public class test {
 
         frame.setAlwaysOnTop(true);
         frame.setSize(400, 500);
-        frame.setUndecorated(true);
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("SlotMachine");
@@ -44,19 +43,31 @@ public class test {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        //System.out.println(GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices());
+        int screenWidth = gd.getDisplayMode().getWidth();
+        int screenHeight = gd.getDisplayMode().getHeight();
         
         move.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 
                 double randomX = Math.random() * (Toolkit.getDefaultToolkit().getScreenSize().getWidth());
                 double randomY = Math.random() * (Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-                
+
                 if (frame.getLocation().getX() != randomX && frame.getLocation().getY() != randomY) {
                     frame.getLocation().translate(200, 200);
                     Point finalPos = new Point();
                     finalPos.setLocation(randomX / 180, randomY / 180);
                     for (int i = 0; i < 180; i++) {
                         frame.setLocation((int)finalPos.getX() * i, (int)finalPos.getY() * i);
+
+                        if (frame.getLocation().getX() > screenWidth - frame.getWidth()) {
+                            frame.setLocation((int)(screenWidth - frame.getWidth()), (int)frame.getLocation().getY());
+                        }
+                        if (frame.getLocation().getY() > screenHeight - frame.getHeight()) {
+                            frame.setLocation((int)frame.getLocation().getX(), (int)(screenHeight - frame.getHeight()));
+                        }
+
                         try {
                             Thread.sleep(1000/60);
                         } catch (InterruptedException e1) {
