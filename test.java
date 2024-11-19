@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
 import javax.swing.*;
 
 public class test {
@@ -69,7 +68,6 @@ public class test {
                         try {
                             Thread.sleep(1000/60);
                         } catch (InterruptedException e1) {
-                            e1.printStackTrace();
                         }
                     }
                 }
@@ -85,7 +83,7 @@ public class test {
                         // (1 = ground, 2 = flying, 3 = ground and climbing)
                         // The second number defines the rarity
                         // (0-3, common, rare, epic, legendary)
-                        // And last but not least the last number are the actual pet number.
+                        // And the last number are the actual pets id.
                     if (Rarity == "GrCommon0") {
                         MultiThreadPets pets = new MultiThreadPets(1, 0, 0);
                         pets.start();

@@ -13,8 +13,6 @@ public class pet {
         frame.add(panel);
 
         Color bgColor = new Color(0,0,0,1);
-        
-        System.err.println(bgColor.getAlpha());
 
         frame.setAlwaysOnTop(true);
         frame.setSize(64,64);
@@ -25,9 +23,9 @@ public class pet {
         frame.setLocationRelativeTo(null);
 
         String[] commonArray = {"commonZero", "commonOne", "commonTwo", "commonThree", "commonFour"};
-        String[] rareArray = {"rar0", "rar1", "rar2", "rar3", "rar4"};
-        String[] epicArray = {"epi0", "epi1", "epi2", "epi3", "epi4"};
-        String[] legendaryArray = {"leg0", "leg1", "leg2", "leg3", "leg4"};
+        String[] rareArray = {"rareZero", "rareOne", "rareTwo", "rareThree", "rareFour"};
+        String[] epicArray = {"epicZero", "epicOne", "epicTwo", "epicThree", "epicFour"};
+        String[] legendaryArray = {"legendaryZero", "legendaryOne", "legendaryTwo", "legendaryThree", "legendaryFour"};
 
         String[][] rarityArray = new String[][] {commonArray, rareArray, epicArray, legendaryArray};
 
@@ -73,16 +71,12 @@ public class pet {
             
             for (int f = 0; f < 180; f++) {
                 frame.setLocation((int)frame.getLocation().getX() + ((int)XDistance / 180), (int)frame.getLocation().getY() + ((int)YDistance) / 180);
-                if (XDistance > 0 && XDistance > YDistance) {
-                    System.out.println("RIGHT WAY WE GOOOOOOOOOOO");
-                    ImageIcon image1 = new ImageIcon("sprites\\PetRight.png");
-                    Image img = image1.getImage();
-                    frame.imageUpdate(img, f, f, f, f, f);
-                }
+                /*if (XDistance > 0 && XDistance > YDistance) {
+                    
+                }*/
                 try {
                     Thread.sleep(1000/60);
                 } catch (InterruptedException e1) {
-                    e1.printStackTrace();
                 }
             }
         }
@@ -95,7 +89,6 @@ public class pet {
             try {
                 Thread.sleep((long) (1000 * waitTime));
             } catch (InterruptedException e1) {
-                e1.printStackTrace();
             }
             String[] petActions = {"walk", "special"};
             String action = petActions[(int)(Math.random() * petActions.length)];
@@ -103,7 +96,7 @@ public class pet {
                 PetMove(type, rarity, id);
             } else if (action == "special") {
                 special PetSpecial = new special();
-                PetSpecial.PetSpecialSummon();
+                PetSpecial.PetSpecialManager(type, rarity, id, frame.getLocation());
             }
         }
     }
