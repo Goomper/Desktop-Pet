@@ -10,8 +10,6 @@ public class test {
     JFrame frame;
     JPanel panel;
     int spinAmount = 1;
-    LocalDateTime cooldown;
-    LocalDateTime currentTime;
 
     public test() {
 
