@@ -85,7 +85,7 @@ public class pet {
 
     public void PetBehaviorFlying(int type, int rarity, int id) {
         while (true) {
-            double waitTime = (Math.random() * 3) + 1;
+            double waitTime = (Math.random() * 2) + 1;
             try {
                 Thread.sleep((long) (1000 * waitTime));
             } catch (InterruptedException e1) {
