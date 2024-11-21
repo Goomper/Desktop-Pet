@@ -2,8 +2,8 @@ public class randomPet {
     static String petType;
 
     public static String randompet() {
-        String[] PetCommon = {"GrCommon0", "GrCommon1", "GrCommon2", "GrCommon3", "GrCommon4"};
-        String[] PetRare = {"rare0", "rare1", "rare2", "rare3", "rare4"};
+        String[] PetCommon = {"commonZero", "commonOne", "commonTwo", "commonThree", "commonFour"};
+        String[] PetRare = {"rareZero"};
         String[] PetEpic = {"epic0", "epic1", "epic2", "epic3", "epic4"};
         String[] PetLegendary = {"legendary0", "legendary1", "legendary2", "legendary3", "legendary4"};
 

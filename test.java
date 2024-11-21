@@ -64,7 +64,6 @@ public class test {
                         if (frame.getLocation().getY() > screenHeight - frame.getHeight()) {
                             frame.setLocation((int)frame.getLocation().getX(), (int)(screenHeight - frame.getHeight()));
                         }
-
                         try {
                             Thread.sleep(1000/60);
                         } catch (InterruptedException e1) {
@@ -84,24 +83,28 @@ public class test {
                         // The second number defines the rarity
                         // (0-3, common, rare, epic, legendary)
                         // And the last number are the actual pets id.
-                    if (Rarity == "GrCommon0") {
+                    if (Rarity == "commonZero") {
                         MultiThreadPets pets = new MultiThreadPets(1, 0, 0);
                         pets.start();
                         return;
-                    } else if (Rarity == "GrCommon1") {
+                    } else if (Rarity == "commonOne") {
                         MultiThreadPets pets = new MultiThreadPets(1, 0, 1);
                         pets.start();
                         return;
-                    } else if (Rarity == "GrCommon2") {
+                    } else if (Rarity == "commonTwo") {
                         MultiThreadPets pets = new MultiThreadPets(1, 0, 2);
                         pets.start();
                         return;
-                    } else if (Rarity == "GrCommon3") {
+                    } else if (Rarity == "commonThree") {
                         MultiThreadPets pets = new MultiThreadPets(1, 0, 3);
                         pets.start();
                         return;
-                    } else if (Rarity == "GrCommon4") {
+                    } else if (Rarity == "commonFour") {
                         MultiThreadPets pets = new MultiThreadPets(1, 0, 4);
+                        pets.start();
+                        return;
+                    } else if (Rarity == "rareZero") {
+                        MultiThreadPets pets = new MultiThreadPets(1, 1, 0);
                         pets.start();
                         return;
                     }

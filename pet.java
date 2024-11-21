@@ -23,7 +23,7 @@ public class pet {
         frame.setLocationRelativeTo(null);
 
         String[] commonArray = {"commonZero", "commonOne", "commonTwo", "commonThree", "commonFour"};
-        String[] rareArray = {"rareZero", "rareOne", "rareTwo", "rareThree", "rareFour"};
+        String[] rareArray = {"rareZero"};
         String[] epicArray = {"epicZero", "epicOne", "epicTwo", "epicThree", "epicFour"};
         String[] legendaryArray = {"legendaryZero", "legendaryOne", "legendaryTwo", "legendaryThree", "legendaryFour"};
 
@@ -56,6 +56,11 @@ public class pet {
             frame.add(new JLabel(image1));
             frame.setVisible(true);
             PetBehaviorFlying();
+        } else if (rarityArray[rarity][id] == "rareZero") {
+            ImageIcon image1 = new ImageIcon("sprites\\1.png");
+            frame.add(new JLabel(image1));
+            frame.setVisible(true);
+            PetBehaviorFlying(type, rarity, id);
         } */
     }
 
